@@ -21,3 +21,14 @@ const container = document.getElementById('app');
 const root = createRoot(container);
 root.render(<App />);
 ```
+
+``` jsx
+// React 19
+const container = document.getElementById('app');
+const root = createRoot(container, {
+    onUncaughtError: LocalMonitor.reactErrorHandler(),
+    onCaughtError: LocalMonitor.reactErrorHandler(),
+    onRecoverableError: LocalMonitor.reactErrorHandler(),
+});
+root.render(<App />);
+```
