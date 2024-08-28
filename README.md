@@ -32,3 +32,16 @@ const root = createRoot(container, {
 });
 root.render(<App />);
 ```
+
+```
+// class usage
+class App extends React.Component {
+    render() {
+      return (
+        <LocalMonitor.ErrorBoundary fallback={FallbackComponent}>
+            <OtherComponents />
+        </LocalMonitor.ErrorBoundary>
+      );
+    }
+}
+```
