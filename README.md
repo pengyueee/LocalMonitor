@@ -2,12 +2,13 @@
 LocalMonitor is an error tracking and performance monitoring tools, suitable for localization and Private deployment project.
 
 # General
+
+react <= 18
 ``` jsx
 import React from 'react'
 import { createRoot } from 'react-dom/client';
 import LocalMonitor from 'react-local-monitor';
 
-// react <= 18
 LocalMonitor.init({
     // Local storage type, localstorage sessionstorage indexdb， Default IndexDB, then downgrade compatibility
     storage: 'indexdb',
@@ -22,8 +23,8 @@ const root = createRoot(container);
 root.render(<App />);
 ```
 
+React 19
 ``` jsx
-// React 19
 const container = document.getElementById('app');
 const root = createRoot(container, {
     onUncaughtError: LocalMonitor.reactErrorHandler(),
@@ -33,8 +34,8 @@ const root = createRoot(container, {
 root.render(<App />);
 ```
 
-```
-// class usage
+class usage
+``` jsx
 class App extends React.Component {
     render() {
       return (
